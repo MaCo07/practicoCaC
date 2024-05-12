@@ -3,9 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="/estilos/contacto.css" />
     <title>Contacto</title>
   </head>
@@ -18,30 +21,96 @@
         <h1>Contactanos para ayudar!</h1>
         <div class="texto-contacto">
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur
-            dolorum aperiam corporis numquam ipsum delectus accusantium corrupti
-            mollitia necessitatibus vel. Illo nostrum provident officiis velit
-            quasi libero tenetur vitae earum.
+            ¿Estás buscando a tu compañero peludo perdido o deseas brindarle un
+            hogar amoroso a un animal necesitado? ¡Estás en el lugar indicado!
+            ¡Únete a nosotros en esta noble causa y ayuda a hacer del mundo un
+            lugar mejor para nuestros amigos peludos! Contáctanos hoy mismo para
+            marcar la diferencia en la vida de un animal.<br>
+            <strong>¡Gracias por ser parte de nuestra comunidad!</strong>
           </p>
         </div>
       </div>
     </section>
     <section class="container-form">
-        <form>
-            <h2>Formulario de contacto</h2>
-            <div class="form_input">
-                <label for="nombre">Nombre:</label>
-                <input type="text" id="nombre" placeholder="Nombre">
-            </div>
-            <div class="form_input">
-                <label for="email">Email:</label>
-                <input type="email" id="email" placeholder="Email">
-            </div>
-            <div class="form_input">
-                <label for="mensaje">Mensaje:</label>
-                <textarea placeholder="Deja tu mensaje" id="mensaje"></textarea>
-            </div>
-          </form>
+      <form action="https://formspree.io/f/mgebbokb" method="POST">
+        <h2>Formulario de contacto</h2>
+        <div class="form_input">
+          <label for="nombre">Nombre:</label>
+          <input type="text" id="nombre" placeholder="Nombre" name="nombre" />
+        </div>
+        <div class="form_input">
+          <label for="email">Email:</label>
+          <input type="email" id="email" placeholder="Email" name="email" />
+        </div>
+        <div class="form_input">
+          <label
+            >Tipo de consulta
+            <select name="tipo-consulta">
+              <option value="consulta1">Ayuda humana</option>
+              <option value="consulta2">Donar dinero</option>
+              <option value="consulta3">Consulta general</option>
+            </select>
+          </label>
+        </div>
+        <div class="form_input">
+          <label for="archivo"
+            >Carga una imagen
+            <input type="file" id="archivo" name="archivo" />
+          </label>
+        </div>
+        <div class="form_input">
+          <label for="mensaje">Mensaje:</label>
+          <textarea
+            placeholder="Deja tu mensaje"
+            id="mensaje"
+            name="mensaje"
+          ></textarea>
+        </div>
+        <div class="form_input">
+          <label for="condiciones"
+            >Acepto los <a href="">terminos y condiciones</a>
+            <input
+              type="checkbox"
+              class="checkbox"
+              id="condiciones"
+              name="condiciones"
+              value="acepto"
+            />
+          </label>
+        </div>
+        <div class="form_input">
+          <input type="submit" class="enviar" />
+        </div>
+      </form>
     </section>
+    <footer class="container-footer">
+      <div class="contenido-footer">
+        <div class="footer-ubicacion">
+          <h3>Nuestra ubicacion</h3>
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3284.0168881863865!2d-58.38414532462503!3d-34.603734457498476!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4aa9f0a6da5edb%3A0x11bead4e234e558b!2sObelisco!5e0!3m2!1ses-419!2sar!4v1715473244057!5m2!1ses-419!2sar" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <div class="footer-links">
+          <ul class="footer-lista">
+            <li><a href="#">Inicio</a></li>
+            <li><a href="#">Adoptar</a></li>
+            <li><a href="#">Perdidos</a></li>
+            <li><a href="#">Contacto</a></li>
+          </ul>
+        </div>
+        <div class="footer-redes">
+          <ul class="footer-lista-redes">
+            <li><a href="#">
+              <img src="../fotos/facebook.png" width="40px" height="40px">
+            </a></li>
+            <li><a href="#">
+              <img src="../fotos/instagram.png" width="40px" height="40px">
+            </a></li>
+            <li><a href="#">
+              <img src="../fotos/X.png" width="40px" height="40px">
+            </a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>
