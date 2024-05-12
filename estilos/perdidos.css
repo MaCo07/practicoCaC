@@ -1,0 +1,130 @@
+body{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Montserrat", sans-serif;
+    text-decoration: none;
+}
+
+.container-perdidos{
+    width: 100%;
+    background-color: #DAF3EA;
+    margin: auto;
+    text-align: center;
+    margin-top: 20px;
+    font-size: 1rem;
+}
+
+.contenido-perdidos{
+    width: 80%;
+    background-color: #DAF3EA;
+    margin: auto;
+    padding: 10px;
+}
+
+.contenido-perdidos h1{
+    font-weight: 700;
+    font-size: x-large;
+    padding: 10px;
+}
+
+.contenido-texto p{
+    letter-spacing: 2px;
+}
+
+.contenido-perdidos a button{
+    padding:12px 15px;
+    margin: 5px;
+    border-radius: 8px;
+    font-weight: 500;
+    background-color: #85E6C0;
+    color: white;
+    border: none;
+}
+
+.contenido-perdidos a button:hover{
+    background-color: #6BB39B;
+    
+}
+
+.container-galeria{
+    margin-top: 50px;
+    display: grid;
+    justify-content: center;
+}
+
+.galeria-fotos{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    gap: 20px;
+}
+
+.card-mascotas{
+    background-color: #DAF3EA;
+    object-fit: cover;
+    overflow: hidden;
+    width: 300px;
+    text-align: center;
+    border-radius: 8px;
+}
+
+.card-mascotas img{
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+
+/* FOOTER */
+
+.container-footer{
+    background-color: #daf3ea;
+    margin-top: 40px;
+    width: 100%;
+}
+
+.contenido-footer{
+display: flex;
+justify-content: space-around;
+align-items: center;
+padding: 20px;
+}
+
+ul, a{
+    list-style: none;
+    text-decoration: none;
+}
+
+.footer-links li{
+    padding: 8px;
+    font-weight: 500;
+}
+
+.footer-links a:hover{
+    color: rgb(55, 14, 14);
+}
+
+.footer-lista-redes{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-lista-redes a img{
+    transition: transform 0.3s ease;
+}
+
+.footer-lista-redes a img:hover{
+    transform: scale(1.1);
+}
+
+/* RESPONSIVE */
+
+@media only screen and (max-width: 577px){
+    .contenido-footer{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
