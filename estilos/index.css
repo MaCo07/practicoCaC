@@ -94,7 +94,7 @@ a {
   display: flex;
   justify-content: start;
   align-items: center;
-  background-color: var(--verde_claro);
+  background-color: var(--verde_oscuro);
   gap: 5vw;
   padding: 5vw 10vw;
 }
@@ -113,25 +113,45 @@ a {
 .info-h2 {
   text-align: center;
 }
+/* FOOTER */
 
-.footer-icon {
+.container-footer {
+  background-color: #daf3ea;
+  width: 100%;
+}
+
+.contenido-footer {
   display: flex;
-  margin-bottom: 10px;
-  gap: 50px;
-  justify-content: center;
-  color: var(--blanco);
-}
-.footer {
-  padding-top: 3vw;
-  padding-bottom: 2vw;
-  color: var(--blanco);
-  text-align: center;
-  background-color: var(--negro);
-}
-.svg-footer {
-  font-size: xx-large;
+  justify-content: space-around;
+  align-items: center;
+  padding: 20px;
 }
 
-.title-footer {
-  font-size: medium;
+ul,
+a {
+  list-style: none;
+  text-decoration: none;
+}
+
+.footer-links li {
+  padding: 8px;
+  font-weight: 500;
+}
+
+.footer-links a:hover {
+  color: rgb(55, 14, 14);
+}
+
+.footer-lista-redes {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer-lista-redes a img {
+  transition: transform 0.3s ease;
+}
+
+.footer-lista-redes a img:hover {
+  transform: scale(1.1);
 }
