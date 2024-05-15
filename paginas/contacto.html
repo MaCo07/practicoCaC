@@ -41,17 +41,19 @@
       </div>
     </section>
     <section class="container-form">
-      <form action="https://formspree.io/f/mgebbokb" method="POST">
+      <form action="https://formspree.io/f/mgebbokb" method="POST" class="formulario" id="formulario">
         <h2>Formulario de contacto</h2>
-        <div class="form_input">
+        <div class="form_input" id="grupo__nombre">
           <label for="nombre">Nombre:</label>
           <input type="text" id="nombre" placeholder="Nombre" name="nombre" />
+          <p class="form__input-error">El nombre no puede tener numeros ni caracteres especiales</p>
         </div>
-        <div class="form_input">
+        <div class="form_input" id="grupo__email">
           <label for="email">Email:</label>
           <input type="email" id="email" placeholder="Email" name="email" />
+          <p class="form__input-error">El email debe tener el caracter "@"</p>
         </div>
-        <div class="form_input">
+        <div class="form_input" id="grupo__consulta">
           <label
             >Tipo de consulta
             <select name="tipo-consulta">
@@ -61,13 +63,13 @@
             </select>
           </label>
         </div>
-        <div class="form_input">
+        <div class="form_input" id="grupo__archivo">
           <label for="archivo"
             >Carga una imagen
             <input type="file" id="archivo" name="archivo" />
           </label>
         </div>
-        <div class="form_input">
+        <div class="form_input" id="grupo__mensaje">
           <label for="mensaje">Mensaje:</label>
           <textarea
             placeholder="Deja tu mensaje"
@@ -75,9 +77,9 @@
             name="mensaje"
           ></textarea>
         </div>
-        <div class="form_input">
-          <label for="condiciones"
-            >Acepto los <a href="">terminos y condiciones</a>
+        <div class="form_input" id="grupo__terminos">
+          <label class="formulario__condiciones">
+            Acepto los <a href="">terminos y condiciones</a>
             <input
               type="checkbox"
               class="checkbox"
@@ -87,7 +89,8 @@
             />
           </label>
         </div>
-        <div class="form_input">
+        <div class="form_input" id="grupo__enviar">
+          <p class="mensaje__error"><b>Error: </b>Rellene el formulario </p>
           <input type="submit" class="enviar" />
         </div>
       </form>
@@ -122,5 +125,6 @@
       </div>
     <p style="text-align: center; font-weight: bold; padding-bottom: 20px; margin: 0;">Todos los derechos reservados &COPY; 2024</p> 
     </footer>
+    <script src="../js/formulario.js"></script>
   </body>
 </html> 
