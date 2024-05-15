@@ -7,7 +7,7 @@ const expresiones = {
 }
 
 const validarFormulario = () => {
-    console.log('se ejcuto')
+    
 }
 
 input.forEach((input) => {
