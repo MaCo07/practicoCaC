@@ -41,7 +41,7 @@
       </div>
     </section>
     <section class="container-form">
-      <form action="https://formspree.io/f/mgebbokb" method="POST" class="formulario" id="formulario">
+      <form class="formulario" action="https://formspree.io/f/mgebbokb" method="POST" id="formulario">
         <h2>Formulario de contacto</h2>
         <div class="form_input" id="grupo__nombre">
           <label for="nombre">Nombre:</label>
@@ -89,9 +89,12 @@
             />
           </label>
         </div>
-        <div class="form_input" id="grupo__enviar">
-          <p class="mensaje__error"><b>Error: </b>Rellene el formulario </p>
-          <input type="submit" class="enviar" />
+        <div class="mensaje__error formulario__mensaje" id="formulario__mensaje">
+          <p><b>Error: </b> Por favor rellena el formulario</p>
+        </div>
+        <div class="form_input formulario__grupo-btn-enviar" id="grupo__enviar">
+          <button type="button" onclick="validarFormulario()" class="enviar formulario__btn">Enviar</button>
+          <p class="formulario__mensaje-exito" id="formulario__mensaje-exito">Formulario Enviado</p>
         </div>
       </form>
     </section>
@@ -125,6 +128,7 @@
       </div>
     <p style="text-align: center; font-weight: bold; padding-bottom: 20px; margin: 0;">Todos los derechos reservados &COPY; 2024</p> 
     </footer>
-    <script src="../js/formulario.js"></script>
+    <script src="../js/formulario.js">
+    </script>
   </body>
 </html> 

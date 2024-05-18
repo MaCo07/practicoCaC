@@ -1,67 +1,52 @@
-const formulario = document.getElementById('formulario');
-const input = document.querySelectorAll('#formulario input');
 
-const expresiones = {
-	nombre: /^[a-zA-ZÀ-ÿ\s]{1,40}$/, // Letras y espacios, pueden llevar acentos.
-	email: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
-}
+function validarFormulario() {
+    // Obtener los elementos del formulario
+    const nombre = document.getElementById('nombre').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const mensaje = document.getElementById('mensaje').value.trim();
+    const condiciones = document.getElementById('condiciones').checked;
 
-const campos = {
-    nombre: false,
-    email: false
-}
+    // Obtener los elementos para mostrar errores
+    const errorNombre = document.querySelector('#grupo__nombre .form__input-error');
+    const errorEmail = document.querySelector('#grupo__email .form__input-error');
+    const errorMensaje = document.getElementById('formulario__mensaje');
+    const mensajeExito = document.getElementById('formulario__mensaje-exito');
 
-const validarFormulario = (e) => {
-    switch (e.target.name) {
-        case "nombre":
-            validarCampo(expresiones.nombre, e.target, 'nombre');
-            // if(expresiones.nombre.test(e.target.value)){
-            //     document.getElementById('grupo__nombre').classList.remove('form_input__grupo-incorrecto');
-            //     document.getElementById('grupo__nombre').classList.add('form_input__grupo-correcto');
-            //     document.querySelector('#grupo__nombre .form__input-error').classList.remove('form__input-error-activo')
+    // Reiniciar los mensajes de error
+    errorNombre.style.display = 'none';
+    errorEmail.style.display = 'none';
+    errorMensaje.style.display = 'none';
+    mensajeExito.style.display = 'none';
 
-            // } else{
-            //     document.getElementById('grupo__nombre').classList.add('form_input__grupo-incorrecto');
-            //     document.getElementById('grupo__nombre').classList.remove('form_input__grupo-correcto');
-            //     document.querySelector('#grupo__nombre .form__input-error').classList.add('form__input-error-activo');
-            // }
-        break;    
-        case "email":
-            validarCampo(expresiones.email, e.target, 'email')
-        break;    
-        case "mensaje":
+    let esValido = true;
 
-        break;    
-  
+    // Validar el nombre
+    if (nombre === '' || /\d|[^a-zA-Z\s]/.test(nombre)) {
+        errorNombre.style.display = 'block';
+        esValido = false;
+    }
+
+    // Validar el email
+    if (email === '' || !/^\S+@\S+\.\S+$/.test(email)) {
+        errorEmail.style.display = 'block';
+        esValido = false;
+    }
+
+    // Validar el mensaje
+    if (mensaje === '') {
+        errorMensaje.style.display = 'block';
+        esValido = false;
+    }
+
+    // Validar las condiciones
+    if (!condiciones) {
+        errorMensaje.style.display = 'block';
+        esValido = false;
+    }
+
+    // Si el formulario es válido, mostrar mensaje y limpiar campos
+    if (esValido) {
+        document.getElementById('formulario').reset();
+        mensajeExito.style.display = 'block';
     }
 }
-
-
-const validarCampo = (expresion, input, campo) => {
-    if(expresion.test(input.value)){
-        document.getElementById(`grupo__${campo}`).classList.remove('form_input__grupo-incorrecto');
-        document.getElementById(`grupo__${campo}`).classList.add('form_input__grupo-correcto');
-        document.querySelector(`#grupo__${campo} .form__input-error`).classList.remove('form__input-error-activo')
-        campos[campo] = true
-    } else{
-        document.getElementById(`grupo__${campo}`).classList.add('form_input__grupo-incorrecto');
-        document.getElementById(`grupo__${campo}`).classList.remove('form_input__grupo-correcto');
-        document.querySelector(`#grupo__${campo} .form__input-error`).classList.add('form__input-error-activo');
-        campos[campo] = false
-    }
-}
-
-input.forEach((input) => {
-    input.addEventListener('keyup', validarFormulario);//Cuando levante la tecla se ejecuta esta funcion
-    input.addEventListener('blur', validarFormulario);
-});
-
-formulario.addEventListener('submit',(e) =>{
-    e.preventDefault();
-
-    const terminos = document.getElementById('terminos')
-    if(campos.nombre && campos.email && terminos.cheked){
-        formulario.reset();
-
-    }
-})

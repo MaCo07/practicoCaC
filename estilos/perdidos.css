@@ -158,4 +158,20 @@ a {
     flex-direction: column;
     align-items: center;
   }
+
+  .galeria-fotos{
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+}
+
+@media only screen and  (min-width: 576px) and (max-width: 767px){
+  .contenido-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .galeria-fotos{
+    grid-template-columns: 1fr 1fr;
+  }
 }
